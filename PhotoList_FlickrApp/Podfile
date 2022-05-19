@@ -1,0 +1,22 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'PhotoList_FlickrApp' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for PhotoList_FlickrApp
+	pod 'Moya/RxSwift'
+	pod 'Kingfisher'
+	pod 'RxSwiftExt'
+
+  target 'PhotoList_FlickrAppTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'PhotoList_FlickrAppUITests' do
+    # Pods for testing
+  end
+
+end
