@@ -10,6 +10,9 @@
 		046462A22836E70200F4840D /* PhotoResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046462A12836E70200F4840D /* PhotoResultModel.swift */; };
 		046462A42836E81E00F4840D /* PhotoListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046462A32836E81E00F4840D /* PhotoListAPI.swift */; };
 		046462A62836E83B00F4840D /* PhotoListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046462A52836E83B00F4840D /* PhotoListService.swift */; };
+		046462A82836F45300F4840D /* PhotoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046462A72836F45300F4840D /* PhotoListViewModel.swift */; };
+		046462AB2836F7A500F4840D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046462AA2836F7A500F4840D /* BaseViewController.swift */; };
+		046462AD2836F86E00F4840D /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046462AC2836F86E00F4840D /* BaseViewModel.swift */; };
 		04D3C9412836E350007EE133 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3C9402836E350007EE133 /* AppDelegate.swift */; };
 		04D3C9432836E350007EE133 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3C9422836E350007EE133 /* SceneDelegate.swift */; };
 		04D3C9452836E350007EE133 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3C9442836E350007EE133 /* ViewController.swift */; };
@@ -45,6 +48,9 @@
 		046462A12836E70200F4840D /* PhotoResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResultModel.swift; sourceTree = "<group>"; };
 		046462A32836E81E00F4840D /* PhotoListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListAPI.swift; sourceTree = "<group>"; };
 		046462A52836E83B00F4840D /* PhotoListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListService.swift; sourceTree = "<group>"; };
+		046462A72836F45300F4840D /* PhotoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewModel.swift; sourceTree = "<group>"; };
+		046462AA2836F7A500F4840D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		046462AC2836F86E00F4840D /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		04D3C93D2836E350007EE133 /* PhotoList_FlickrApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoList_FlickrApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D3C9402836E350007EE133 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D3C9422836E350007EE133 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +127,7 @@
 		0464629D2836E66500F4840D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				046462A72836F45300F4840D /* PhotoListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -149,6 +156,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		046462A92836F78900F4840D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				046462AA2836F7A500F4840D /* BaseViewController.swift */,
+				046462AC2836F86E00F4840D /* BaseViewModel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		04D3C9342836E350007EE133 = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +190,7 @@
 		04D3C93F2836E350007EE133 /* PhotoList_FlickrApp */ = {
 			isa = PBXGroup;
 			children = (
+				046462A92836F78900F4840D /* Base */,
 				0464629B2836E62300F4840D /* Task Module */,
 				04D3C9402836E350007EE133 /* AppDelegate.swift */,
 				04D3C9422836E350007EE133 /* SceneDelegate.swift */,
@@ -468,10 +485,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				04D3C9452836E350007EE133 /* ViewController.swift in Sources */,
+				046462AD2836F86E00F4840D /* BaseViewModel.swift in Sources */,
 				04D3C9412836E350007EE133 /* AppDelegate.swift in Sources */,
 				04D3C94B2836E350007EE133 /* PhotoList_FlickrApp.xcdatamodeld in Sources */,
 				046462A62836E83B00F4840D /* PhotoListService.swift in Sources */,
 				046462A42836E81E00F4840D /* PhotoListAPI.swift in Sources */,
+				046462AB2836F7A500F4840D /* BaseViewController.swift in Sources */,
+				046462A82836F45300F4840D /* PhotoListViewModel.swift in Sources */,
 				046462A22836E70200F4840D /* PhotoResultModel.swift in Sources */,
 				04D3C9432836E350007EE133 /* SceneDelegate.swift in Sources */,
 			);

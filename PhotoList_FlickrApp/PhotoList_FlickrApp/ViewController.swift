@@ -8,8 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: BaseViewController {
 
+    let vm = PhotoListViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("success")
