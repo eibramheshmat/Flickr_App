@@ -13,10 +13,13 @@
 		046462A82836F45300F4840D /* PhotoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046462A72836F45300F4840D /* PhotoListViewModel.swift */; };
 		046462AB2836F7A500F4840D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046462AA2836F7A500F4840D /* BaseViewController.swift */; };
 		046462AD2836F86E00F4840D /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046462AC2836F86E00F4840D /* BaseViewModel.swift */; };
+		046462B12836FE7B00F4840D /* AllPhotosListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046462AF2836FE7B00F4840D /* AllPhotosListViewController.swift */; };
+		046462B22836FE7B00F4840D /* AllPhotosListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046462B02836FE7B00F4840D /* AllPhotosListViewController.xib */; };
+		046462B5283702EA00F4840D /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046462B3283702EA00F4840D /* PhotosTableViewCell.swift */; };
+		046462B6283702EA00F4840D /* PhotosTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046462B4283702EA00F4840D /* PhotosTableViewCell.xib */; };
+		046462BD28371E9700F4840D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046462BC28371E9700F4840D /* Main.storyboard */; };
 		04D3C9412836E350007EE133 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3C9402836E350007EE133 /* AppDelegate.swift */; };
 		04D3C9432836E350007EE133 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3C9422836E350007EE133 /* SceneDelegate.swift */; };
-		04D3C9452836E350007EE133 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3C9442836E350007EE133 /* ViewController.swift */; };
-		04D3C9482836E350007EE133 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D3C9462836E350007EE133 /* Main.storyboard */; };
 		04D3C94B2836E350007EE133 /* PhotoList_FlickrApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04D3C9492836E350007EE133 /* PhotoList_FlickrApp.xcdatamodeld */; };
 		04D3C94D2836E356007EE133 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D3C94C2836E356007EE133 /* Assets.xcassets */; };
 		04D3C9502836E356007EE133 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D3C94E2836E356007EE133 /* LaunchScreen.storyboard */; };
@@ -51,11 +54,14 @@
 		046462A72836F45300F4840D /* PhotoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewModel.swift; sourceTree = "<group>"; };
 		046462AA2836F7A500F4840D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		046462AC2836F86E00F4840D /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		046462AF2836FE7B00F4840D /* AllPhotosListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPhotosListViewController.swift; sourceTree = "<group>"; };
+		046462B02836FE7B00F4840D /* AllPhotosListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllPhotosListViewController.xib; sourceTree = "<group>"; };
+		046462B3283702EA00F4840D /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotosTableViewCell.swift; path = Cells/PhotosTableViewCell.swift; sourceTree = "<group>"; };
+		046462B4283702EA00F4840D /* PhotosTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PhotosTableViewCell.xib; path = Cells/PhotosTableViewCell.xib; sourceTree = "<group>"; };
+		046462BC28371E9700F4840D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		04D3C93D2836E350007EE133 /* PhotoList_FlickrApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoList_FlickrApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D3C9402836E350007EE133 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D3C9422836E350007EE133 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		04D3C9442836E350007EE133 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		04D3C9472836E350007EE133 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04D3C94A2836E350007EE133 /* PhotoList_FlickrApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PhotoList_FlickrApp.xcdatamodel; sourceTree = "<group>"; };
 		04D3C94C2836E356007EE133 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04D3C94F2836E356007EE133 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -135,6 +141,9 @@
 		0464629E2836E68000F4840D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				046462AE2836FE5600F4840D /* ViewControllers */,
+				046462B3283702EA00F4840D /* PhotosTableViewCell.swift */,
+				046462B4283702EA00F4840D /* PhotosTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,6 +172,15 @@
 				046462AC2836F86E00F4840D /* BaseViewModel.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		046462AE2836FE5600F4840D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				046462AF2836FE7B00F4840D /* AllPhotosListViewController.swift */,
+				046462B02836FE7B00F4840D /* AllPhotosListViewController.xib */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		04D3C9342836E350007EE133 = {
@@ -194,10 +212,9 @@
 				0464629B2836E62300F4840D /* Task Module */,
 				04D3C9402836E350007EE133 /* AppDelegate.swift */,
 				04D3C9422836E350007EE133 /* SceneDelegate.swift */,
-				04D3C9442836E350007EE133 /* ViewController.swift */,
-				04D3C9462836E350007EE133 /* Main.storyboard */,
 				04D3C94C2836E356007EE133 /* Assets.xcassets */,
 				04D3C94E2836E356007EE133 /* LaunchScreen.storyboard */,
+				046462BC28371E9700F4840D /* Main.storyboard */,
 				04D3C9512836E356007EE133 /* Info.plist */,
 				04D3C9492836E350007EE133 /* PhotoList_FlickrApp.xcdatamodeld */,
 			);
@@ -354,9 +371,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046462B6283702EA00F4840D /* PhotosTableViewCell.xib in Resources */,
 				04D3C9502836E356007EE133 /* LaunchScreen.storyboard in Resources */,
+				046462B22836FE7B00F4840D /* AllPhotosListViewController.xib in Resources */,
+				046462BD28371E9700F4840D /* Main.storyboard in Resources */,
 				04D3C94D2836E356007EE133 /* Assets.xcassets in Resources */,
-				04D3C9482836E350007EE133 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,9 +503,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04D3C9452836E350007EE133 /* ViewController.swift in Sources */,
+				046462B12836FE7B00F4840D /* AllPhotosListViewController.swift in Sources */,
 				046462AD2836F86E00F4840D /* BaseViewModel.swift in Sources */,
 				04D3C9412836E350007EE133 /* AppDelegate.swift in Sources */,
+				046462B5283702EA00F4840D /* PhotosTableViewCell.swift in Sources */,
 				04D3C94B2836E350007EE133 /* PhotoList_FlickrApp.xcdatamodeld in Sources */,
 				046462A62836E83B00F4840D /* PhotoListService.swift in Sources */,
 				046462A42836E81E00F4840D /* PhotoListAPI.swift in Sources */,
@@ -529,14 +549,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		04D3C9462836E350007EE133 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04D3C9472836E350007EE133 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		04D3C94E2836E356007EE133 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

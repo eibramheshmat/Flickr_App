@@ -14,11 +14,11 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindViewModel()
+        bindBaseViewModel()
         // Do any additional setup after loading the view.
     }
     
-    func bindViewModel() {
+    func bindBaseViewModel() {
         baseViewModel.loading.asObservable().subscribe { (event) in
             self.showLoading(show: event.element ?? false)
         }.disposed(by: baseViewModel.disposeBag)

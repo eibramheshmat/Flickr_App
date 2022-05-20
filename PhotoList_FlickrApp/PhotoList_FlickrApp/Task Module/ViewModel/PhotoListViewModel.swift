@@ -8,11 +8,12 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 class PhotoListViewModel: BaseViewModel {
     
     var service: PhotoListService
-    var photoList: Photos?
+    var photoList = BehaviorRelay<[Photo]>(value: [])
     
     init(service: PhotoListService = PhotoListService()) {
         self.service = service
@@ -29,7 +30,7 @@ class PhotoListViewModel: BaseViewModel {
                     print(errMsg)
                 }else{
                     if let res = result{
-                        self?.photoList = res
+                        self?.photoList.accept(res.photo ?? [])
                     }else{
                         print("empty result")
                     }

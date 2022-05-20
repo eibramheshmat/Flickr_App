@@ -15,8 +15,8 @@ extension Reactive where Base: UIImageView {
     
     /// Bindable sink for `image` property.
     public var image: Binder<UIImage?> {
-        return Binder(base) { imageView, image in
-            imageView.image = image
+        return Binder(base) { imageCellView, image in
+            imageCellView.image = image
         }
     }
 }
