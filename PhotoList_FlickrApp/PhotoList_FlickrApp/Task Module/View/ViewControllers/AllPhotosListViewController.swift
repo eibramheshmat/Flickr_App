@@ -22,29 +22,44 @@ class AllPhotosListViewController: BaseViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableCell()
-        bindViewModel()
+        bindTableViewModel()
         
     }
     
     func registerTableCell() {
         photosTableView.register(UINib(nibName: "PhotosTableViewCell", bundle: nil), forCellReuseIdentifier: "PhotosTableViewCell")
+        photosTableView.register(UINib(nibName: "AdBannerTableViewCell", bundle: nil), forCellReuseIdentifier: "AdBannerTableViewCell")
     }
     
-    func bindViewModel() {
+    func bindTableViewModel() {
         photosTableView.rx.setDelegate(self).disposed(by: viewModel.disposeBag)
         
-        viewModel.photoList.asObservable().bind(to: photosTableView.rx.items(cellIdentifier: "PhotosTableViewCell", cellType: PhotosTableViewCell.self))
-        { index, elment, cell in
-            cell.setData(dataObj: elment)
+        viewModel.photoList.asObservable().bind(to: photosTableView.rx.items){
+            (data,index,item) -> UITableViewCell in
+            if (index % 5 == 0) {
+                let cell = self.photosTableView.dequeueReusableCell(withIdentifier: "AdBannerTableViewCell", for: IndexPath.init(row: index, section: 0))
+                return cell
+            } else {
+                let cell = self.photosTableView.dequeueReusableCell(withIdentifier: "PhotosTableViewCell", for: IndexPath.init(row: index, section: 0)) as? PhotosTableViewCell
+                cell?.setData(dataObj: item)
+                return cell ?? UITableViewCell()
+            }
         }.disposed(by: viewModel.disposeBag)
         
         photosTableView.rowHeight = 220
         
-        photosTableView.rx.modelSelected(Photo.self).subscribe { (photo) in
-            let url = URL(string: "https://farm\(photo.element?.farm ?? 0).static.flickr.com/\(photo.element?.server ?? "")/\(photo.element?.id ?? "")_\(photo.element?.secret ?? "").jpg")
-            self.fullScreenImage.kf.setImage(with: url)
-            self.fullImageView.isHidden = false
-        }.disposed(by: viewModel.disposeBag)
+        Observable
+        .zip(photosTableView.rx.itemSelected, photosTableView.rx.modelSelected(Photo.self))
+        .bind { [unowned self] indexPath, model in
+            if (indexPath.row % 5 == 0) {
+                
+            }else{
+                let url = URL(string: "https://farm\(model.farm ?? 0).static.flickr.com/\(model.server ?? "")/\(model.id ?? "")_\(model.secret ?? "").jpg")
+                self.fullScreenImage.kf.setImage(with: url)
+                self.fullImageView.isHidden = false
+            }
+        }
+        .disposed(by: viewModel.disposeBag)
         
         photosTableView.rx.didScroll.subscribe { [weak self] _ in
             guard let self = self else { return }

@@ -43,15 +43,36 @@
                             <constraint firstItem="xHi-7a-X32" firstAttribute="leading" secondItem="fmv-Qh-dkM" secondAttribute="leading" constant="16" id="rta-VC-UVx"/>
                         </constraints>
                     </view>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rKy-BT-oKc">
+                        <rect key="frame" x="8" y="2" width="317" height="208"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad" translatesAutoresizingMaskIntoConstraints="NO" id="AL4-Lq-LZf">
+                                <rect key="frame" x="8" y="4" width="301" height="200"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="AL4-Lq-LZf" firstAttribute="top" secondItem="rKy-BT-oKc" secondAttribute="top" constant="4" id="1zl-cG-NOT"/>
+                            <constraint firstAttribute="bottom" secondItem="AL4-Lq-LZf" secondAttribute="bottom" constant="4" id="ZAD-0i-41d"/>
+                            <constraint firstItem="AL4-Lq-LZf" firstAttribute="leading" secondItem="rKy-BT-oKc" secondAttribute="leading" constant="8" id="efs-AT-1iI"/>
+                            <constraint firstAttribute="trailing" secondItem="AL4-Lq-LZf" secondAttribute="trailing" constant="8" id="vaP-wd-riM"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="fmv-Qh-dkM" secondAttribute="trailing" constant="16" id="2UE-wb-xem"/>
+                    <constraint firstAttribute="bottom" secondItem="rKy-BT-oKc" secondAttribute="bottom" constant="2" id="9ls-vb-TB2"/>
+                    <constraint firstItem="rKy-BT-oKc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="RkX-U1-M1n"/>
+                    <constraint firstAttribute="trailing" secondItem="rKy-BT-oKc" secondAttribute="trailing" constant="8" id="V0s-PL-f1C"/>
                     <constraint firstItem="fmv-Qh-dkM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="WIv-Jc-0ik"/>
                     <constraint firstItem="fmv-Qh-dkM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="chF-1d-7sa"/>
+                    <constraint firstItem="rKy-BT-oKc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="nCj-Ha-9pK"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="adImg" destination="AL4-Lq-LZf" id="qGw-GW-61R"/>
+                <outlet property="adView" destination="rKy-BT-oKc" id="v1H-dk-47u"/>
                 <outlet property="imageCellView" destination="mFb-kT-BME" id="8gu-hr-lIL"/>
                 <outlet property="mainView" destination="fmv-Qh-dkM" id="sDc-Qq-3Xu"/>
                 <outlet property="title" destination="xHi-7a-X32" id="aD5-tb-Y8l"/>
@@ -59,4 +80,7 @@
             <point key="canvasLocation" x="147.10144927536234" y="152.67857142857142"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ad" width="425" height="125"/>
+    </resources>
 </document>

@@ -12,27 +12,34 @@ class PhotosTableViewCell: UITableViewCell {
 
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var imageCellView: UIImageView!
+    @IBOutlet weak var adView: UIView!
+    @IBOutlet weak var adImg: UIImageView!
     @IBOutlet weak var title: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setDesign()
+        setDesign(obj: [mainView,imageCellView,adView,adImg])
         
     }
     
     
-    func setDesign() {
+    func setDesign(obj: [UIView]) {
         self.selectionStyle = .none
-        mainView.layer.cornerRadius = 20
-        mainView.layer.borderWidth = 1
-        imageCellView.layer.cornerRadius = 20
-        imageCellView.layer.borderWidth = 1
+        obj.forEach { (obj) in
+            obj.layer.cornerRadius = 20
+            obj.layer.borderWidth = 1
+        }
     }
     
     func setData(dataObj: Photo) {
+        adView.isHidden = true
         title.text = dataObj.title
         let url = URL(string: "https://farm\(dataObj.farm ?? 0).static.flickr.com/\(dataObj.server ?? "")/\(dataObj.id ?? "")_\(dataObj.secret ?? "").jpg")
         imageCellView.kf.setImage(with: url)
+    }
+    
+    func setAd() {
+        adView.isHidden = false
     }
     
 }

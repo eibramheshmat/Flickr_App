@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0442A231283930E8007230FC /* AdBannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0442A22F283930E8007230FC /* AdBannerTableViewCell.swift */; };
+		0442A232283930E8007230FC /* AdBannerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0442A230283930E8007230FC /* AdBannerTableViewCell.xib */; };
 		046462A22836E70200F4840D /* PhotoResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046462A12836E70200F4840D /* PhotoResultModel.swift */; };
 		046462A42836E81E00F4840D /* PhotoListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046462A32836E81E00F4840D /* PhotoListAPI.swift */; };
 		046462A62836E83B00F4840D /* PhotoListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046462A52836E83B00F4840D /* PhotoListService.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0442A22F283930E8007230FC /* AdBannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdBannerTableViewCell.swift; path = Cells/AdBannerTableViewCell.swift; sourceTree = "<group>"; };
+		0442A230283930E8007230FC /* AdBannerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AdBannerTableViewCell.xib; path = Cells/AdBannerTableViewCell.xib; sourceTree = "<group>"; };
 		046462A12836E70200F4840D /* PhotoResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResultModel.swift; sourceTree = "<group>"; };
 		046462A32836E81E00F4840D /* PhotoListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListAPI.swift; sourceTree = "<group>"; };
 		046462A52836E83B00F4840D /* PhotoListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListService.swift; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 				046462AE2836FE5600F4840D /* ViewControllers */,
 				046462B3283702EA00F4840D /* PhotosTableViewCell.swift */,
 				046462B4283702EA00F4840D /* PhotosTableViewCell.xib */,
+				0442A22F283930E8007230FC /* AdBannerTableViewCell.swift */,
+				0442A230283930E8007230FC /* AdBannerTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -373,6 +379,7 @@
 			files = (
 				046462B6283702EA00F4840D /* PhotosTableViewCell.xib in Resources */,
 				04D3C9502836E356007EE133 /* LaunchScreen.storyboard in Resources */,
+				0442A232283930E8007230FC /* AdBannerTableViewCell.xib in Resources */,
 				046462B22836FE7B00F4840D /* AllPhotosListViewController.xib in Resources */,
 				046462BD28371E9700F4840D /* Main.storyboard in Resources */,
 				04D3C94D2836E356007EE133 /* Assets.xcassets in Resources */,
@@ -507,6 +514,7 @@
 				046462AD2836F86E00F4840D /* BaseViewModel.swift in Sources */,
 				04D3C9412836E350007EE133 /* AppDelegate.swift in Sources */,
 				046462B5283702EA00F4840D /* PhotosTableViewCell.swift in Sources */,
+				0442A231283930E8007230FC /* AdBannerTableViewCell.swift in Sources */,
 				04D3C94B2836E350007EE133 /* PhotoList_FlickrApp.xcdatamodeld in Sources */,
 				046462A62836E83B00F4840D /* PhotoListService.swift in Sources */,
 				046462A42836E81E00F4840D /* PhotoListAPI.swift in Sources */,
