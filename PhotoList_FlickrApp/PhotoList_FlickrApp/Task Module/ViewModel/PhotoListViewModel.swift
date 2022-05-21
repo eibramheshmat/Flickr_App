@@ -30,7 +30,9 @@ class PhotoListViewModel: BaseViewModel {
                     print(errMsg)
                 }else{
                     if let res = result{
-                        self?.photoList.accept(res.photo ?? [])
+                        let chachingPhoto = self?.photoList.value ?? []
+                        let newPhoto = res.photo ?? []
+                        self?.photoList.accept(chachingPhoto+newPhoto)
                     }else{
                         print("empty result")
                     }

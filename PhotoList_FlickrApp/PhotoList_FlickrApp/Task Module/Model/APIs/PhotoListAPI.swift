@@ -13,7 +13,7 @@ import Alamofire
 public enum PhotoListAPI {
   // 1
     static private let privateKey = "d17378e37e555ebef55ab86c4180e8dc"
-    static private let currentPage = "1"
+    static public var currentPage = "1"
 
   // 2
     case getPhotoList
