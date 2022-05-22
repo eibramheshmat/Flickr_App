@@ -49,15 +49,15 @@ class AllPhotosListViewController: BaseViewController, UITableViewDelegate {
         photosTableView.rowHeight = 220
         
         Observable
-        .zip(photosTableView.rx.itemSelected, photosTableView.rx.modelSelected(Photo.self))
-        .bind { [unowned self] indexPath, model in
-            if (indexPath.row % 5 == 0) {
-                
-            }else{
-                let url = URL(string: "https://farm\(model.farm ?? 0).static.flickr.com/\(model.server ?? "")/\(model.id ?? "")_\(model.secret ?? "").jpg")
-                self.fullScreenImage.kf.setImage(with: url)
-                self.fullImageView.isHidden = false
-            }
+            .zip(photosTableView.rx.itemSelected, photosTableView.rx.modelSelected(Photo.self))
+            .bind { [unowned self] indexPath, model in
+                if (indexPath.row % 5 == 0) {
+                    
+                }else{
+                    let url = URL(string: "https://farm\(model.farm ?? 0).static.flickr.com/\(model.server ?? "")/\(model.id ?? "")_\(model.secret ?? "").jpg")
+                    self.fullScreenImage.kf.setImage(with: url)
+                    self.fullImageView.isHidden = false
+                }
         }
         .disposed(by: viewModel.disposeBag)
         
@@ -65,7 +65,7 @@ class AllPhotosListViewController: BaseViewController, UITableViewDelegate {
             guard let self = self else { return }
             let offSetY = self.photosTableView.contentOffset.y
             let contentHeight = self.photosTableView.contentSize.height
-
+            
             if offSetY > (contentHeight - self.photosTableView.frame.size.height - 100) {
                 let currentPage = Int(PhotoListAPI.currentPage) ?? 0
                 let currentShouldBe = currentPage + 1

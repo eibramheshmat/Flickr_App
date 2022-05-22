@@ -41,7 +41,6 @@ class PhotoListViewModel: BaseViewModel {
                             self?.photoList.accept(res.photo ?? [])
                             self?.photoList.value.forEach({ (Photo) in
                                 self?.saveToCoreData(photo: Photo)
-//                                self?.saveToCoreData(url: "https://farm\(Photo.farm ?? 0).static.flickr.com/\(Photo.server ?? "")/\(Photo.id ?? "")_\(Photo.secret ?? "").jpg")
                             })
                         }else{
                             let chachingPhoto = self?.photoList.value ?? []

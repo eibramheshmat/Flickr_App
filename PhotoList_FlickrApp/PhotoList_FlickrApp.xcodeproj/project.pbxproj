@@ -176,6 +176,8 @@
 			children = (
 				046462AA2836F7A500F4840D /* BaseViewController.swift */,
 				046462AC2836F86E00F4840D /* BaseViewModel.swift */,
+				04D3C9402836E350007EE133 /* AppDelegate.swift */,
+				04D3C9422836E350007EE133 /* SceneDelegate.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -216,8 +218,6 @@
 			children = (
 				046462A92836F78900F4840D /* Base */,
 				0464629B2836E62300F4840D /* Task Module */,
-				04D3C9402836E350007EE133 /* AppDelegate.swift */,
-				04D3C9422836E350007EE133 /* SceneDelegate.swift */,
 				04D3C94C2836E356007EE133 /* Assets.xcassets */,
 				04D3C94E2836E356007EE133 /* LaunchScreen.storyboard */,
 				046462BC28371E9700F4840D /* Main.storyboard */,
