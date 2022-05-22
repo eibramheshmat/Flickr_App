@@ -15,7 +15,7 @@ class PhotoListViewModel: BaseViewModel {
     
     var service: PhotoListService
     var photoList = BehaviorRelay<[Photo]>(value: [])
-    var photosURL: [NSManagedObject] = []
+    var photosCashed: [NSManagedObject] = []
     
     init(service: PhotoListService = PhotoListService()) {
         self.service = service
@@ -24,7 +24,7 @@ class PhotoListViewModel: BaseViewModel {
             getAllPhotos()
         }else{
             //show cashing
-            print("chashing")
+            fetchFromCoreData()
         }
     }
     
@@ -40,7 +40,8 @@ class PhotoListViewModel: BaseViewModel {
                         if UserDefaults.standard.bool(forKey: "firstLaunch") {
                             self?.photoList.accept(res.photo ?? [])
                             self?.photoList.value.forEach({ (Photo) in
-                                self?.saveToCoreData(url: "https://farm\(Photo.farm ?? 0).static.flickr.com/\(Photo.server ?? "")/\(Photo.id ?? "")_\(Photo.secret ?? "").jpg")
+                                self?.saveToCoreData(photo: Photo)
+//                                self?.saveToCoreData(url: "https://farm\(Photo.farm ?? 0).static.flickr.com/\(Photo.server ?? "")/\(Photo.id ?? "")_\(Photo.secret ?? "").jpg")
                             })
                         }else{
                             let chachingPhoto = self?.photoList.value ?? []
@@ -57,7 +58,7 @@ class PhotoListViewModel: BaseViewModel {
         }).disposed(by: disposeBag)
     }
     
-    func saveToCoreData(url: String) {
+    func saveToCoreData(photo: Photo) {
         
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
@@ -73,19 +74,53 @@ class PhotoListViewModel: BaseViewModel {
             NSEntityDescription.entity(forEntityName: "PhotosCash",
                                        in: managedContext)!
         
-        let photo = NSManagedObject(entity: entity,
+        let photoObj = NSManagedObject(entity: entity,
                                     insertInto: managedContext)
         
         // 3
-        photo.setValue(url, forKeyPath: "url")
+        photoObj.setValue(String(photo.farm ?? 0), forKeyPath: "farm")
+        photoObj.setValue(photo.id, forKeyPath: "id")
+        photoObj.setValue(photo.secret, forKeyPath: "secret")
+        photoObj.setValue(photo.server, forKeyPath: "server")
+        photoObj.setValue(photo.title, forKeyPath: "title")
         
         // 4
         do {
             try managedContext.save()
-            photosURL.append(photo)
+//            photosCashed.append(photoObj)
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
+    }
+    
+    func fetchFromCoreData() {
+        guard let appDelegate =
+          UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext =
+          appDelegate.persistentContainer.viewContext
+        
+        //2
+        let fetchRequest =
+          NSFetchRequest<NSManagedObject>(entityName: "PhotosCash")
+        
+        //3
+        do {
+          photosCashed = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+          print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        
+        var photosChased : [Photo] = []
+        photosCashed.forEach { (obj) in
+            let photoObj = Photo(id: (obj.value(forKey: "id") as! String), owner: "", secret: (obj.value(forKey: "secret") as! String), server: (obj.value(forKey: "server") as! String), farm: Int((obj.value(forKey: "farm") as! String)), title: (obj.value(forKey: "title") as! String), ispublic: 0, isfriend: 0, isfamily: 0)
+            photosChased.append(photoObj)
+        }
+        
+        photoList.accept(photosChased)
+        
     }
     
 }

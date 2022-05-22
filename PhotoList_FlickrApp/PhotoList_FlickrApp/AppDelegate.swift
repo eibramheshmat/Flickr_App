@@ -13,17 +13,67 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
+    var loging: [NSManagedObject] = []
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        if UserDefaults.standard.bool(forKey: "firstLaunch"){
-            UserDefaults.standard.set(false, forKey: "firstLaunch")
-        }else if UserDefaults.standard.bool(forKey: "firstLaunch") == false {
-            UserDefaults.standard.set(false, forKey: "firstLaunch")
-        }else{
-            UserDefaults.standard.register(defaults: ["firstLaunch":true])
+        guard let appDelegate =
+          UIApplication.shared.delegate as? AppDelegate else {
+            return true
         }
+        
+        let managedContext =
+          appDelegate.persistentContainer.viewContext
+        
+        //2
+        let fetchRequest =
+          NSFetchRequest<NSManagedObject>(entityName: "Log")
+        
+        //3
+        do {
+          loging = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+          print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        
+        if loging.count == 0 {
+            save(value: true)
+            UserDefaults.standard.register(defaults: ["firstLaunch":true])
+        }else{
+            UserDefaults.standard.register(defaults: ["firstLaunch":false])
+        }
+        
         return true
+    }
+    
+    func save(value: Bool) {
+      
+      guard let appDelegate =
+        UIApplication.shared.delegate as? AppDelegate else {
+        return
+      }
+      
+      // 1
+      let managedContext =
+        appDelegate.persistentContainer.viewContext
+      
+      // 2
+      let entity =
+        NSEntityDescription.entity(forEntityName: "Log",
+                                   in: managedContext)!
+      
+      let person = NSManagedObject(entity: entity,
+                                   insertInto: managedContext)
+      
+      // 3
+      person.setValue(value, forKeyPath: "logBefore")
+      
+      // 4
+      do {
+        try managedContext.save()
+        loging.append(person)
+      } catch let error as NSError {
+        print("Could not save. \(error), \(error.userInfo)")
+      }
     }
 
     // MARK: UISceneSession Lifecycle
